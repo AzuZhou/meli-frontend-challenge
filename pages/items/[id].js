@@ -2,7 +2,9 @@ import React from 'react'
 import Error from 'next/error'
 import fetch from 'isomorphic-unfetch'
 
+import Layout from '../../components/Layout'
 import SearchBar from '../../components/SearchBar'
+import ItemDetails from '../../components/ItemDetails'
 
 const Item = ({ errorCode, item }) => {
   if (errorCode) {
@@ -10,10 +12,10 @@ const Item = ({ errorCode, item }) => {
   }
 
   return (
-    <div>
+    <Layout>
       <SearchBar />
-      <h2>Product</h2>
-    </div>
+      <ItemDetails />
+    </Layout>
   )
 }
 

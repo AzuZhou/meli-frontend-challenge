@@ -4,7 +4,7 @@ import SearchBar from '../components/SearchBar'
 const Home = () => {
   return (
     <div>
-      <SearchBar />
+      <SearchBar autoFocus />
     </div>
   )
 }

@@ -11,12 +11,13 @@ export default async (req, res) => {
     const data = await response.json()
 
     const categoryFilter = data.filters.find(filter => filter.id === 'category')
-    const categories = categoryFilter.values[0].path_from_root
-    const filteredCategories = categories.map(category => category.name)
+    const categories = categoryFilter && categoryFilter.values[0].path_from_root
+    const filteredCategories = categories && categories.map(category => category.name)
     const { results } = data
     const limitedResults = results.length > 4 ? results.slice(0, 4) : results
     const filteredResults = limitedResults.map(result => {
       const { id, title, currency_id, price, thumbnail, condition, shipping } = result
+
       return {
         id,
         title,
@@ -30,6 +31,7 @@ export default async (req, res) => {
         free_shipping: shipping.free_shipping
       }
     })
+
     const formattedData = {
       author: {
         name: 'Azucena',

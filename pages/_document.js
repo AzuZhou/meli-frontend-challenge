@@ -1,5 +1,37 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheet, createGlobalStyle } from 'styled-components'
+
+import { COLORS } from '../utils/constants'
+
+const GlobalStyles = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+  * {
+    font-family: 'Roboto', sans-serif; 
+  }
+
+  body {
+    background: ${COLORS.backgroundGrey};
+    margin: 0;
+
+    input, button {
+      outline: none;
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: ${COLORS.textBlack};
+
+      &:focus, &:active, &:visited {
+        color: ${COLORS.textBlack};
+      }
+
+      &:hover {
+        color: ${COLORS.hoverTextBlack};
+      }
+    }
+  }
+`
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,7 +41,13 @@ class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+          enhanceApp: App => props =>
+            sheet.collectStyles(
+              <>
+                <GlobalStyles />
+                <App {...props} />
+              </>
+            )
         })
 
       const initialProps = await Document.getInitialProps(ctx)

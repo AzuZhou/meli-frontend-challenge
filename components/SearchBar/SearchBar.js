@@ -4,8 +4,7 @@ import Router from 'next/router'
 
 import { Container, StyledImage, StyledForm } from './styled'
 
-const SearchBar = props => {
-  const { input: incomingInput } = props
+const SearchBar = ({ input: incomingInput, autoFocus }) => {
   const [input, setInput] = useState('')
 
   useEffect(() => {
@@ -25,16 +24,26 @@ const SearchBar = props => {
 
   return (
     <Container>
-      <Link href={'/'}>
-        <StyledImage src={'/meli-isologo.png'} alt="Mercado Libre" />
-      </Link>
+      <div>
+        <Link href={'/'}>
+          <a>
+            <StyledImage src={'/meli-isologo.png'} alt="Mercado Libre" />
+          </a>
+        </Link>
 
-      <StyledForm onSubmit={handleSearch}>
-        <input type="text" value={input} onChange={handleInputChange} />
-        <button>
-          <img src="/search.svg" alt="Buscar" />
-        </button>
-      </StyledForm>
+        <StyledForm onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder={'Buscar productos, marcas y más...'}
+            value={input}
+            onChange={handleInputChange}
+            autoFocus={autoFocus}
+          />
+          <button>
+            <img src="/search.svg" alt="Buscar" />
+          </button>
+        </StyledForm>
+      </div>
     </Container>
   )
 }

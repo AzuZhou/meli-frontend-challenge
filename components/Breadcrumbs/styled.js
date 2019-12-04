@@ -24,10 +24,11 @@ const Container = styled.div`
     line-height: 1.45;
     display: inherit;
     color: ${COLORS.grey};
-    cursor: default;
+    cursor: pointer;
     font-weight: ${FONT_WEIGHTS.weight2};
 
-    &:last-child {
+    &:last-child,
+    &:hover {
       color: ${COLORS.textBlack};
     }
 

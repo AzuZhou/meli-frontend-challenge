@@ -21,7 +21,8 @@ const COLORS = {
   green: '#00a650',
   yellow: '#fff159',
   placeholderGrey: 'rgba(0, 0, 0, 0.2)',
-  blue: 'rgb(52, 131, 250)'
+  blue: 'rgb(52, 131, 250)',
+  orange: '#dc7b1c'
 }
 
 const FONT_WEIGHTS = {

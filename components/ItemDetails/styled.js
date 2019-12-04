@@ -23,6 +23,7 @@ const Grid = styled.div`
   margin-bottom: 80px;
   background: white;
   padding: 22px;
+  border-radius: 4px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-row: repeat(3, 1fr);
   grid-template-areas:

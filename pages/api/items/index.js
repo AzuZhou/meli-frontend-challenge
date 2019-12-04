@@ -4,8 +4,9 @@ import { getPriceFraction, getPriceCents } from '../../../utils/helpers'
 
 export default async (req, res) => {
   const { q } = req.query
+  if (q === '') res.status(200).json({ items: q })
 
-  if (q) {
+  if (q && q !== 'undefined') {
     const searhUrl = `${process.env.MELI_API_URL}/sites/MLA/search?q=${q}`
     const response = await fetch(searhUrl)
     const data = await response.json()
@@ -43,6 +44,6 @@ export default async (req, res) => {
 
     res.status(200).json(formattedData)
   } else {
-    res.status(404).json({ error: 'No products found' })
+    res.status(404).json({ status: 404, error: 'No products found' })
   }
 }

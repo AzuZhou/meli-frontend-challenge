@@ -11,7 +11,7 @@ export default async (req, res) => {
     const data = await response.json()
 
     const { error, status } = data
-    if (error) res.json({ error: 'Product not found', statusCode: status })
+    if (error) res.json({ error: 'Product not found', status })
 
     const descriptionUrl = `${process.env.MELI_API_URL}/items/${id}/description`
     const descriptionResponse = await fetch(descriptionUrl)
@@ -60,6 +60,6 @@ export default async (req, res) => {
 
     res.status(200).json(formattedData)
   } else {
-    res.status(404).json({ error: 'Product not found' })
+    res.status(404).json({ error: 'Page not found' })
   }
 }

@@ -24,7 +24,9 @@ Item.getInitialProps = async ({ query }) => {
   const response = await fetch(`${process.env.API_URL}/api/items/${id}`)
   const item = await response.json()
   const { statusCode } = item
-  const errorCode = statusCode > 200 ? statusCode : false
+  let errorCode = statusCode > 200 ? statusCode : false
+  const { error, status } = item
+  if (error) errorCode = status
 
   return { errorCode, item }
 }

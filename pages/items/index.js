@@ -1,12 +1,12 @@
 import React from 'react'
-import Error from 'next/error'
 import fetch from 'isomorphic-unfetch'
+import Error from 'next/error'
 
 import Layout from '../../components/Layout'
 import ItemsList from '../../components/ItemsList'
 import SearchBar from '../../components/SearchBar'
 
-const Items = ({ errorCode, items, search }) => {
+const Items = ({ search, items, errorCode }) => {
   if (errorCode) {
     return <Error statusCode={errorCode} />
   }
@@ -22,10 +22,12 @@ const Items = ({ errorCode, items, search }) => {
 Items.getInitialProps = async ({ query }) => {
   const { search } = query
   const response = await fetch(`${process.env.API_URL}/api/items?q=${search}`)
-  const errorCode = response.statusCode > 200 ? response.statusCode : false
+  let errorCode = response.statusCode > 200 ? response.statusCode : false
   const items = await response.json()
+  const { error, status } = items
+  if (error) errorCode = status
 
-  return { errorCode, items, search }
+  return { search, items, errorCode }
 }
 
 export default Items

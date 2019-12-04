@@ -16,6 +16,7 @@ const Container = styled.div`
     justify-content: left;
     align-items: center;
     margin: 0 22px;
+    cursor: pointer;
 
     @media ${MEDIA_BREAKPOINTS.tablet} {
       pointer-events: none;

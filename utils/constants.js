@@ -17,9 +17,11 @@ const COLORS = {
   textBlack: '#333',
   hoverTextBlack: '#000',
   grey: '#666',
+  lightGrey: 'rgba(0,0,0,.45)',
   green: '#00a650',
   yellow: '#fff159',
-  placeholderGrey: 'rgba(0, 0, 0, 0.2)'
+  placeholderGrey: 'rgba(0, 0, 0, 0.2)',
+  blue: 'rgb(52, 131, 250)'
 }
 
 const FONT_WEIGHTS = {
@@ -28,15 +30,26 @@ const FONT_WEIGHTS = {
 }
 
 const FONT_SIZES = {
-  font1: '24px',
-  font2: '20px',
-  font3: '16px',
-  font4: '14px',
-  font5: '12px'
+  font1: '44px',
+  font2: '36px',
+  font3: '26px',
+  font4: '24px',
+  font5: '22px',
+  font6: '20px',
+  font7: '18px',
+  font8: '16px',
+  font9: '14px',
+  font10: '12px'
 }
 
 const CURRENCY = {
   ARS: '$'
 }
 
-export { MEDIA_BREAKPOINTS, COLORS, FONT_WEIGHTS, FONT_SIZES, CURRENCY }
+const CONDITIONS = {
+  new: 'Nuevo',
+  not_specified: '',
+  used: 'Usado'
+}
+
+export { MEDIA_BREAKPOINTS, COLORS, FONT_WEIGHTS, FONT_SIZES, CURRENCY, CONDITIONS }

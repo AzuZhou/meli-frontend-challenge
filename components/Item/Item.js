@@ -24,11 +24,13 @@ const Item = ({ item }) => {
             <Link href={`/items/${id}`}>
               <a className="title">{title}</a>
             </Link>
-            <Price>
-              <span>{CURRENCY[price.currency]}&nbsp;</span>
-              <span>{getFormattedPrice(price.amount)}</span>
-              {price.decimals > 0 && <span className="decimals">{price.decimals}</span>}
-            </Price>
+            {price && (
+              <Price>
+                <span>{CURRENCY[price.currency]}&nbsp;</span>
+                <span>{getFormattedPrice(price.amount)}</span>
+                {price.decimals > 0 && <span className="decimals">{price.decimals}</span>}
+              </Price>
+            )}
             {free_shipping && <label>Envío gratis</label>}
           </div>
         </div>

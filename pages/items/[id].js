@@ -14,7 +14,7 @@ const Item = ({ errorCode, item }) => {
   return (
     <Layout>
       <SearchBar />
-      <ItemDetails />
+      <ItemDetails item={item} />
     </Layout>
   )
 }

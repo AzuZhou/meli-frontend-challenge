@@ -61,7 +61,7 @@ const Container = styled.div`
         }
 
         .title {
-          font-size: ${FONT_SIZES.font4};
+          font-size: ${FONT_SIZES.font9};
           line-height: 18px;
           font-weight: ${FONT_WEIGHTS.weight2};
           margin-bottom: 12px;
@@ -73,20 +73,19 @@ const Container = styled.div`
           text-overflow: ellipsis;
 
           @media ${MEDIA_BREAKPOINTS.tablet} {
-            font-size: ${FONT_SIZES.font2};
+            font-size: ${FONT_SIZES.font6};
             line-height: 1.2;
           }
         }
 
         label {
           color: ${COLORS.green};
-          font-size: ${FONT_SIZES.font5};
+          font-size: ${FONT_SIZES.font9};
           line-height: 14px;
           margin-top: 12px;
           font-weight: ${FONT_WEIGHTS.weight2};
 
           @media ${MEDIA_BREAKPOINTS.tablet} {
-            font-size: ${FONT_SIZES.font4};
             line-height: 1.3;
             margin-top: 32px;
           }
@@ -100,12 +99,12 @@ const Price = styled.div`
   display: inline-block;
 
   span {
-    font-size: ${FONT_SIZES.font2};
+    font-size: ${FONT_SIZES.font6};
     line-height: 1;
     color: ${COLORS.textBlack};
 
     @media ${MEDIA_BREAKPOINTS.tablet} {
-      font-size: ${FONT_SIZES.font1};
+      font-size: ${FONT_SIZES.font4};
       line-height: 1.1;
     }
 
@@ -113,7 +112,7 @@ const Price = styled.div`
       position: relative;
       top: -8px;
       right: -2px;
-      font-size: ${FONT_SIZES.font5};
+      font-size: ${FONT_SIZES.font10};
     }
   }
 `

@@ -54,7 +54,7 @@ const StyledForm = styled.form`
     width: calc(100% - 48px);
     border: none;
     padding: 8px 16px;
-    font-size: ${FONT_SIZES.font3};
+    font-size: ${FONT_SIZES.font8};
     color: ${COLORS.textBlack};
 
     &:focus {

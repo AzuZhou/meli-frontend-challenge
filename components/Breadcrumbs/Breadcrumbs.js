@@ -2,10 +2,12 @@ import React from 'react'
 
 import { Container } from './styled'
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({ categories }) => {
   return (
     <Container>
-      <h5>Breadcrumbs</h5>
+      {categories.map(category => {
+        return <span key={category}>{category}</span>
+      })}
     </Container>
   )
 }

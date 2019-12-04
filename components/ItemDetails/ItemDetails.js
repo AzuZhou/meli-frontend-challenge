@@ -9,13 +9,14 @@ import { getFormattedPrice } from '../../utils/helpers'
 import { CURRENCY, CONDITIONS } from '../../utils/constants'
 
 const ItemDetails = ({ item }) => {
-  const { title, price, picture, condition, free_shipping, sold_quantity, description } = item.item
+  const { item: itemData, categories } = item
+  const { title, price, picture, condition, free_shipping, sold_quantity, description } = itemData
   const hasSold = sold_quantity > 0
   const conditionDisplay = CONDITIONS[condition]
 
   return (
     <Container>
-      <Breadcrumbs />
+      {categories && <Breadcrumbs categories={categories} />}
 
       <Grid>
         <Picture>

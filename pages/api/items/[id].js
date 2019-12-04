@@ -19,6 +19,7 @@ export default async (req, res) => {
     const { plain_text } = descriptionData
 
     const {
+      category_id,
       id: itemId,
       title,
       currency_id,
@@ -28,6 +29,13 @@ export default async (req, res) => {
       shipping,
       sold_quantity
     } = data
+
+    const categoriesUrl = `${process.env.MELI_API_URL}/categories/${category_id}`
+    const categoriesResponse = await fetch(categoriesUrl)
+    const categoriesData = await categoriesResponse.json()
+    const categories = categoriesData && categoriesData.path_from_root
+    const filteredCategories = categories && categories.map(category => category.name)
+
     const formattedData = {
       author: {
         name: 'Azucena',
@@ -46,7 +54,8 @@ export default async (req, res) => {
         free_shipping: shipping.free_shipping,
         sold_quantity,
         description: plain_text
-      }
+      },
+      categories: filteredCategories
     }
 
     res.status(200).json(formattedData)

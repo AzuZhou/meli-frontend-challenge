@@ -51,6 +51,7 @@ const Picture = styled.div`
 
   img {
     object-fit: contain;
+    max-width: 100%;
   }
 `
 
@@ -74,7 +75,6 @@ const PrimaryInfo = styled.div`
 
   h1 {
     font-size: ${FONT_SIZES.font5};
-    line-height: 1;
     margin: 12px 0 22px 0;
 
     @media ${MEDIA_BREAKPOINTS.tablet} {
@@ -119,14 +119,15 @@ const SecondaryInfo = styled.div`
   }
 
   h3 {
-    font-size: ${FONT_SIZES.font4};
+    font-size: ${FONT_SIZES.font7};
     color: ${COLORS.grey};
     line-height: 1.35;
-    font-weight: ${FONT_WEIGHTS.weight2};
-    margin: 40px 0 22px 0;
+    margin: 40px 0 32px 0;
 
     @media ${MEDIA_BREAKPOINTS.tablet} {
-      font-size: ${FONT_SIZES.font7};
+      font-size: ${FONT_SIZES.font4};
+      font-weight: bold;
+      color: ${COLORS.textBlack};
     }
   }
 

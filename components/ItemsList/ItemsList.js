@@ -7,14 +7,14 @@ import Breadcrumbs from '../Breadcrumbs'
 import { Container, List } from './styled'
 
 const ItemsList = ({ items }) => {
-  const { items: itemsList } = items
+  const { items: itemsList, categories } = items
   const itemsWithKey = itemsList.map(item => {
     return { ...item, key: nanoid() }
   })
 
   return (
     <Container>
-      <Breadcrumbs />
+      {categories && <Breadcrumbs categories={categories} />}
       <List>
         {itemsWithKey.map(item => {
           return (

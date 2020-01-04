@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -20,5 +20,13 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "nodemon": "^2.0.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "pages/*",
+      "components/*",
+      "public/*",
+      "utils/*"
+    ]
   }
 }

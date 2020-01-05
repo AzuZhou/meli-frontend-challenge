@@ -2,8 +2,8 @@
   "alias": "meli-frontend-challenge",
   "build": {
     "env": {
-      "MELI_API_URL": "meli-api-url",
-      "API_URL": "api-url"
+      "MELI_API_URL": "@meli-api-url",
+      "API_URL": "@api-url"
     }
   }
 }

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },
@@ -20,13 +20,5 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "nodemon": "^2.0.1"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "pages/*",
-      "components/*",
-      "public/*",
-      "utils/*"
-    ]
   }
 }
